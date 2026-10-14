@@ -1,32 +1,26 @@
 import 'package:flutter/material.dart';
-import 'screens/auth_screen.dart';
+import 'screens/splash_screen.dart'; // Import splash screen
 
 void main() {
-  runApp(const CampusAssetApp());
+  runApp(const CampusSpaceApp());
 }
 
-class CampusAssetApp extends StatelessWidget {
-  const CampusAssetApp({super.key});
+enum UserRole { mahasiswa, dosen }
+
+class CampusSpaceApp extends StatelessWidget {
+  const CampusSpaceApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Smart Campus Space & Asset',
+      title: 'Campus Space & Asset (sigma_unesa)',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1E3A8A),
-          primary: const Color(0xFF1E3A8A),
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1E3A8A)),
         useMaterial3: true,
-        inputDecorationTheme: InputDecorationTheme(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-        ),
+        fontFamily: 'Roboto',
       ),
-      home: const AuthScreen(),
+      home: const SplashScreen(), // Mulai dari SplashScreen beranimasi
     );
   }
 }
